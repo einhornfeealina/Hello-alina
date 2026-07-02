@@ -1624,6 +1624,7 @@
 
   function renderGallery() {
     if (isPdfMode) { renderPdfPage(); return; }
+    const st = detailPage.scrollTop;
     dpGalFrame.style.width = '';
     const src = galImages[galIdx];
     if (!src) {
@@ -1634,6 +1635,7 @@
       dpGalFrame.innerHTML = `<img src="${src}" alt="">`;
     }
     dpGalCounter.textContent = `${galIdx + 1} / ${galTotal || 1}`;
+    requestAnimationFrame(() => { detailPage.scrollTop = st; });
   }
 
   async function loadPdfGallery(url) {
@@ -1677,6 +1679,7 @@
       return canvas;
     }
 
+    const st = detailPage.scrollTop;
     dpGalFrame.style.width = '100%';
     dpGalFrame.innerHTML = '';
     const wrapper = document.createElement('div');
@@ -1684,6 +1687,7 @@
     wrapper.appendChild(await renderCanvas(leftNum));
     if (hasRight) wrapper.appendChild(await renderCanvas(rightNum));
     dpGalFrame.appendChild(wrapper);
+    detailPage.scrollTop = st;
 
     const rightActual = Math.min(rightNum, pdfDoc.numPages);
     dpGalCounter.textContent = `${leftNum}–${rightActual} / ${pdfDoc.numPages}`;
