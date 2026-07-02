@@ -1632,8 +1632,8 @@
     dpGalCounter.textContent = '…';
     try {
       const lib = window['pdfjs-dist/build/pdf'];
-      pdfDoc = await lib.getDocument(url).promise;
-      galTotal = pdfDoc.numPages;
+      pdfDoc = await lib.getDocument(encodeURI(url)).promise;
+      galTotal = Math.ceil(pdfDoc.numPages / 2);
       await renderPdfPage();
     } catch(e) {
       dpGalFrame.innerHTML = '<div class="dp-gallery-placeholder">PDF unavailable</div>';
@@ -1642,20 +1642,37 @@
 
   async function renderPdfPage() {
     if (!pdfDoc) return;
-    const page = await pdfDoc.getPage(galIdx + 1);
     const dpr = window.devicePixelRatio || 1;
     const containerW = dpGalFrame.parentElement.clientWidth || (window.innerWidth - 2 * getPad());
-    const vp1 = page.getViewport({ scale: 1 });
-    const scale = (containerW / vp1.width) * dpr;
-    const vp = page.getViewport({ scale });
-    const canvas = document.createElement('canvas');
-    canvas.width = vp.width;
-    canvas.height = vp.height;
-    canvas.style.cssText = `display:block;width:${vp.width/dpr}px;height:${vp.height/dpr}px;max-width:100%`;
+    const leftNum = galIdx * 2 + 1;
+    const rightNum = leftNum + 1;
+    const hasRight = rightNum <= pdfDoc.numPages;
+    const gap = 12;
+    const pageW = hasRight ? Math.floor((containerW - gap) / 2) : containerW;
+
+    async function renderCanvas(pageNum, maxW) {
+      const page = await pdfDoc.getPage(pageNum);
+      const vp1 = page.getViewport({ scale: 1 });
+      const scale = (maxW / vp1.width) * dpr;
+      const vp = page.getViewport({ scale });
+      const canvas = document.createElement('canvas');
+      canvas.width = vp.width;
+      canvas.height = vp.height;
+      canvas.style.cssText = `display:block;width:${vp.width/dpr}px;height:${vp.height/dpr}px;flex:1;max-width:50%`;
+      await page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
+      return canvas;
+    }
+
+    dpGalFrame.style.width = '100%';
     dpGalFrame.innerHTML = '';
-    dpGalFrame.appendChild(canvas);
-    await page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
-    dpGalCounter.textContent = `${galIdx + 1} / ${galTotal}`;
+    const wrapper = document.createElement('div');
+    wrapper.style.cssText = `display:flex;gap:${gap}px;width:100%;align-items:flex-start`;
+    wrapper.appendChild(await renderCanvas(leftNum, pageW));
+    if (hasRight) wrapper.appendChild(await renderCanvas(rightNum, pageW));
+    dpGalFrame.appendChild(wrapper);
+
+    const rightActual = Math.min(rightNum, pdfDoc.numPages);
+    dpGalCounter.textContent = `${leftNum}–${rightActual} / ${pdfDoc.numPages}`;
   }
 
   dpGalPrev.addEventListener('click', () => {
