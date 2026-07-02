@@ -1173,6 +1173,8 @@
           <button class="dp-gallery-btn" id="dp-gal-next">
             <svg viewBox="0 0 18 18"><line x1="4" y1="9" x2="14" y2="9"/><polyline points="9,4 14,9 9,14"/></svg>
           </button>
+          <button class="dp-gallery-btn dp-pdf-zoom" id="dp-zoom-out" hidden style="font-size:22px;font-weight:400">−</button>
+          <button class="dp-gallery-btn dp-pdf-zoom" id="dp-zoom-in" hidden style="font-size:22px;font-weight:400">+</button>
         </div>
       </div>
       <div class="dp-next">
@@ -1608,14 +1610,21 @@
   let galTotal = 0;
   let pdfDoc = null;
   let isPdfMode = false;
+  let pdfZoom = 1.0;
 
   if (window['pdfjs-dist/build/pdf']) {
     window['pdfjs-dist/build/pdf'].GlobalWorkerOptions.workerSrc =
       'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
   }
 
+  const dpZoomOut = document.getElementById('dp-zoom-out');
+  const dpZoomIn  = document.getElementById('dp-zoom-in');
+  dpZoomOut.addEventListener('click', () => { pdfZoom = Math.max(0.5, pdfZoom - 0.25); renderPdfPage(); });
+  dpZoomIn.addEventListener('click',  () => { pdfZoom = Math.min(3.0, pdfZoom + 0.25); renderPdfPage(); });
+
   function renderGallery() {
     if (isPdfMode) { renderPdfPage(); return; }
+    dpGalFrame.style.width = '';
     const src = galImages[galIdx];
     if (!src) {
       dpGalFrame.innerHTML = '<div class="dp-gallery-placeholder">Image</div>';
@@ -1648,17 +1657,22 @@
     const rightNum = leftNum + 1;
     const hasRight = rightNum <= pdfDoc.numPages;
     const gap = 12;
-    const pageW = hasRight ? Math.floor((containerW - gap) / 2) : containerW;
+    const halfW = Math.floor((containerW - gap) / 2);
 
-    async function renderCanvas(pageNum, maxW) {
+    /* base scale: fit page into half-width and available viewport height */
+    const maxH = window.innerHeight - 160;
+    const refPage = await pdfDoc.getPage(leftNum);
+    const vp1 = refPage.getViewport({ scale: 1 });
+    const baseScale = Math.min(halfW / vp1.width, maxH / vp1.height);
+    const scale = baseScale * pdfZoom * dpr;
+
+    async function renderCanvas(pageNum) {
       const page = await pdfDoc.getPage(pageNum);
-      const vp1 = page.getViewport({ scale: 1 });
-      const scale = (maxW / vp1.width) * dpr;
       const vp = page.getViewport({ scale });
       const canvas = document.createElement('canvas');
       canvas.width = vp.width;
       canvas.height = vp.height;
-      canvas.style.cssText = `display:block;width:${vp.width/dpr}px;height:${vp.height/dpr}px;flex:1;max-width:50%`;
+      canvas.style.cssText = `display:block;width:${vp.width/dpr}px;height:${vp.height/dpr}px`;
       await page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
       return canvas;
     }
@@ -1666,9 +1680,9 @@
     dpGalFrame.style.width = '100%';
     dpGalFrame.innerHTML = '';
     const wrapper = document.createElement('div');
-    wrapper.style.cssText = `display:flex;gap:${gap}px;width:100%;align-items:flex-start`;
-    wrapper.appendChild(await renderCanvas(leftNum, pageW));
-    if (hasRight) wrapper.appendChild(await renderCanvas(rightNum, pageW));
+    wrapper.style.cssText = `display:flex;gap:${gap}px;width:100%;align-items:flex-start;justify-content:center`;
+    wrapper.appendChild(await renderCanvas(leftNum));
+    if (hasRight) wrapper.appendChild(await renderCanvas(rightNum));
     dpGalFrame.appendChild(wrapper);
 
     const rightActual = Math.min(rightNum, pdfDoc.numPages);
@@ -1720,6 +1734,9 @@
     dpGallery.removeAttribute('hidden');
     isPdfMode = !!p.pdf;
     galIdx = 0;
+    pdfZoom = 1.0;
+    if (isPdfMode) { dpZoomOut.removeAttribute('hidden'); dpZoomIn.removeAttribute('hidden'); }
+    else { dpZoomOut.setAttribute('hidden',''); dpZoomIn.setAttribute('hidden',''); }
     if (p.pdf) {
       pdfDoc = null;
       galImages = [];
