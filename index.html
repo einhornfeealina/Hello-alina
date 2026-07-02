@@ -1679,13 +1679,18 @@
       return canvas;
     }
 
+    /* render off-screen first so old content stays visible until swap */
+    const leftCanvas  = await renderCanvas(leftNum);
+    const rightCanvas = hasRight ? await renderCanvas(rightNum) : null;
+
+    const wrapper = document.createElement('div');
+    wrapper.style.cssText = `display:flex;gap:${gap}px;width:100%;align-items:flex-start;justify-content:center`;
+    wrapper.appendChild(leftCanvas);
+    if (rightCanvas) wrapper.appendChild(rightCanvas);
+
     const st = detailPage.scrollTop;
     dpGalFrame.style.width = '100%';
     dpGalFrame.innerHTML = '';
-    const wrapper = document.createElement('div');
-    wrapper.style.cssText = `display:flex;gap:${gap}px;width:100%;align-items:flex-start;justify-content:center`;
-    wrapper.appendChild(await renderCanvas(leftNum));
-    if (hasRight) wrapper.appendChild(await renderCanvas(rightNum));
     dpGalFrame.appendChild(wrapper);
     detailPage.scrollTop = st;
 
