@@ -1134,6 +1134,21 @@
         <h2 class="ap-heading">Skills</h2>
         <p class="ap-list">Motion Design · Interaction · Design Research · Concept Development · Photo & Film · Knowledge Transfer · Writing · Design for Understanding · DJing · Tattooing</p>
       </div>
+
+      <div class="ap-section">
+        <h2 class="ap-heading">Contact</h2>
+        <p class="ap-bio" style="margin-bottom:clamp(32px,5vw,64px)">I'm a very social person, so if you ever like to chat about something, get in touch.</p>
+        <div class="contact-grid" style="padding:0">
+          <a href="mailto:hi-alina@gmx.de" class="contact-row">
+            <span class="cr-abbr">M</span>
+            <span class="cr-main">hi-alina@gmx.de</span>
+          </a>
+          <a href="https://instagram.com/einhornfeealina" target="_blank" rel="noopener" class="contact-row">
+            <span class="cr-abbr">IG</span>
+            <span class="cr-main">@einhornfeealina</span>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1231,6 +1246,7 @@
 
     <section class="contact" id="contact">
       <div class="section-head"><span class="section-pill">Contact</span></div>
+      <p style="padding: clamp(28px,4vw,52px) var(--pad) 0; font-size:clamp(36px,10vw,76px); font-weight:400; line-height:1; letter-spacing:-0.03em; hyphens:auto; -webkit-hyphens:auto; margin-bottom:clamp(24px,3vw,40px)">I'm a very social person, so if you ever like to chat about something, get in touch.</p>
       <div class="contact-grid">
         <a href="mailto:hi-alina@gmx.de" class="contact-row">
           <span class="cr-abbr">M</span>
@@ -1624,18 +1640,33 @@
 
   function renderGallery() {
     if (isPdfMode) { renderPdfPage(); return; }
-    const st = detailPage.scrollTop;
-    dpGalFrame.style.width = '';
+    dpGalCounter.textContent = `${galIdx + 1} / ${galTotal || 1}`;
     const src = galImages[galIdx];
     if (!src) {
+      const st = detailPage.scrollTop;
+      dpGalFrame.style.width = '';
       dpGalFrame.innerHTML = '<div class="dp-gallery-placeholder">Image</div>';
+      requestAnimationFrame(() => { detailPage.scrollTop = st; });
     } else if (/\.mp4$/i.test(src)) {
-      dpGalFrame.innerHTML = `<video src="${src}" autoplay loop muted playsinline></video>`;
+      const video = document.createElement('video');
+      video.src = src; video.autoplay = true; video.loop = true; video.muted = true; video.playsInline = true;
+      const st = detailPage.scrollTop;
+      dpGalFrame.style.width = '';
+      dpGalFrame.innerHTML = '';
+      dpGalFrame.appendChild(video);
+      requestAnimationFrame(() => { detailPage.scrollTop = st; });
     } else {
-      dpGalFrame.innerHTML = `<img src="${src}" alt="">`;
+      const img = new Image();
+      img.alt = '';
+      img.onload = () => {
+        const st = detailPage.scrollTop;
+        dpGalFrame.style.width = '';
+        dpGalFrame.innerHTML = '';
+        dpGalFrame.appendChild(img);
+        detailPage.scrollTop = st;
+      };
+      img.src = src;
     }
-    dpGalCounter.textContent = `${galIdx + 1} / ${galTotal || 1}`;
-    requestAnimationFrame(() => { detailPage.scrollTop = st; });
   }
 
   async function loadPdfGallery(url) {
