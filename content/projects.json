@@ -9,7 +9,6 @@
       "shortDesc": "A speculative design project exploring transgenerational memory — combining a digital archive with an analogue card game.",
       "desc": "Some things are passed down. Others are not.\n\n\"Between Us, the Years\" is a bachelor's thesis project exploring the transgenerational transmission of wartime experiences and their lasting effects on family and social relationships in the present day. At its core are the memories, attitudes, and relational patterns that continue to shape us across generations — often without our awareness.\n\nThe project combines an interactive digital application with an analogue dialogue and card game, opening up different ways of engaging with the subject. One part of the project can be experienced online",
       "link": "https://zwischen-uns-die-jahre.vercel.app",
-      "caption": "text test test etc"
       "images": ["./media/001_zwischen uns die jahre.png", "./media/002_zwischen uns die jahre.png", "./media/003_zwischen uns die jahre.png"]
     },
     {
@@ -19,7 +18,6 @@
       "date": "Jul 2025",
       "type": "Type of work",
       "shortDesc": "Short description for the project list — one or two sentences.",
-      "link": "https://zwischen-uns-die-jahre.vercel.app",
       "desc": "A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.",
       "link": "https://my.spline.design/ondraalinaschrder-msa0a6Is4LzZ8mMGQTOR2YYq/",
       "images": ["./media/001_ondra.mp4", "./media/002_ondra.png", "./media/003_ondra.png"]
@@ -119,7 +117,7 @@
       "num": "003",
       "cat": "applied",
       "name": "LeitWerk",
-      "date": "Feb 2024 - Jul 26",
+      "date": "Feb 2024 - Jul 2026",
       "type": "Type of work",
       "shortDesc": "Short description for the project list — one or two sentences.",
       "desc": "A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.",
