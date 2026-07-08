@@ -439,7 +439,6 @@
       letter-spacing: 0.05em;
       text-transform: uppercase;
       line-height: 1.5;
-      max-width: 540px;
     }
 
     /* ── Section pill label (About / Contact) — sticky header ── */
@@ -863,19 +862,29 @@
       font-weight: 400;
       line-height: 1;
       letter-spacing: -0.03em;
-      margin-bottom: clamp(48px, 8vw, 100px);
+      margin-bottom: clamp(24px, 4vw, 48px);
+      white-space: pre-line;
+    }
+    .dp-body-text {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.6;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: clamp(40px, 6vw, 80px);
       white-space: pre-line;
     }
     /* Project link */
     .dp-link {
-      display: block;
-      font-size: clamp(36px, 10vw, 76px);
+      display: inline-block;
+      font-size: 14px;
       font-weight: 400;
-      letter-spacing: -0.03em;
-      line-height: 1;
+      letter-spacing: 0.04em;
+      line-height: 1.6;
+      text-transform: uppercase;
       color: inherit;
       text-decoration: underline;
-      text-underline-offset: 0.1em;
+      text-underline-offset: 0.15em;
       text-decoration-thickness: 1px;
       margin-bottom: clamp(40px, 6vw, 80px);
     }
@@ -1195,8 +1204,8 @@
         <div class="dp-meta-item" id="dp-date"></div>
         <div class="dp-meta-item" id="dp-type"></div>
       </div>
-      <p class="dp-desc" id="dp-desc"></p>
-      <a class="dp-link" id="dp-link" href="#" target="_blank" rel="noopener" hidden>Visit Project ↗</a>
+      <p class="dp-body-text" id="dp-body-text"></p>
+      <a class="dp-link" id="dp-link" href="#" target="_blank" rel="noopener" hidden>Visit Project →</a>
       <div class="dp-gallery" id="dp-gallery">
         <div class="dp-gallery-frame" id="dp-gallery-frame">Image</div>
         <div class="dp-gallery-nav">
@@ -1609,7 +1618,7 @@
     .then(data => { PROJECTS = data.projects || []; initProjects(); })
     .catch(() => {
       PROJECTS = [
-        { num: '001', cat: 'core',        name: 'Zwischen uns die Jahre', date: 'Nov 2025', type: 'Interactive application & analog card game', desc: 'A speculative design project exploring memory and intimacy between generations. Combines a digital archive with a tactile card game to create shared rituals around storytelling. The work questions how design can hold space for emotional complexity across time.', images: [] },
+        { num: '001', cat: 'core',        name: 'Zwischen uns die Jahre', date: 'Nov 2025', type: 'Interactive application & analog card game', intro: 'Some things are passed down. Others are not.', desc: 'A speculative design project exploring memory and intimacy between generations. Combines a digital archive with a tactile card game to create shared rituals around storytelling. The work questions how design can hold space for emotional complexity across time.', images: [] },
         { num: '002', cat: 'core',        name: 'Project Title', date: 'Mar 2026', type: 'Type of work', desc: 'A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.', images: [] },
         { num: '003', cat: 'core',        name: 'Project Title', date: 'Jun 2025', type: 'Type of work', desc: 'A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.', images: [] },
         { num: '001', cat: 'foundations', name: 'Project Title', date: 'Jan 2026', type: 'Type of work', desc: 'A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.', images: [] },
@@ -1630,7 +1639,7 @@
   const dpTitle     = document.getElementById('dp-title');
   const dpDate      = document.getElementById('dp-date');
   const dpType      = document.getElementById('dp-type');
-  const dpDesc      = document.getElementById('dp-desc');
+  const dpBodyText  = document.getElementById('dp-body-text');
   const dpCatPill   = document.getElementById('dp-cat-pill');
   const dpNextTitle = document.getElementById('dp-next-title');
   const dpNextBtn   = document.getElementById('dp-next-btn');
@@ -1776,7 +1785,7 @@
     dpTitle.textContent   = p.name;
     dpDate.textContent    = p.date;
     dpType.textContent    = p.type;
-    dpDesc.textContent    = p.desc;
+    dpBodyText.textContent = p.desc || '';
     dpCatPill.textContent = CAT_LABELS[p.cat];
     const nextId = (id + 1) % PROJECTS.length;
     dpNextTitle.textContent = PROJECTS[nextId].name;
