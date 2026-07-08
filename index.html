@@ -1676,23 +1676,31 @@
       dpGalFrame.innerHTML = '<div class="dp-gallery-placeholder">Image</div>';
       requestAnimationFrame(() => { detailPage.scrollTop = st; });
     } else if (/\.mp4$/i.test(src)) {
-      dpGalFrame.style.width = '';
-      dpGalFrame.innerHTML = '<div class="dp-loading"></div>';
+      const hasContent = dpGalFrame.firstElementChild && !dpGalFrame.querySelector('.dp-loading,.dp-gallery-placeholder');
+      if (!hasContent) {
+        dpGalFrame.style.width = '';
+        dpGalFrame.innerHTML = '<div class="dp-loading"></div>';
+      }
       const video = document.createElement('video');
-      video.src = src; video.autoplay = true; video.loop = true; video.muted = true; video.playsInline = true;
+      video.src = src; video.autoplay = true; video.loop = true; video.muted = true; video.playsInline = true; video.controls = true;
       video.addEventListener('loadeddata', () => {
         const st = detailPage.scrollTop;
+        dpGalFrame.style.width = '';
         dpGalFrame.innerHTML = '';
         dpGalFrame.appendChild(video);
         detailPage.scrollTop = st;
       }, { once: true });
     } else {
-      dpGalFrame.style.width = '';
-      dpGalFrame.innerHTML = '<div class="dp-loading"></div>';
+      const hasContent = dpGalFrame.firstElementChild && !dpGalFrame.querySelector('.dp-loading,.dp-gallery-placeholder');
+      if (!hasContent) {
+        dpGalFrame.style.width = '';
+        dpGalFrame.innerHTML = '<div class="dp-loading"></div>';
+      }
       const img = new Image();
       img.alt = '';
       img.onload = () => {
         const st = detailPage.scrollTop;
+        dpGalFrame.style.width = '';
         dpGalFrame.innerHTML = '';
         dpGalFrame.appendChild(img);
         detailPage.scrollTop = st;
