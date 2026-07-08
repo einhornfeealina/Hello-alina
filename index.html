@@ -1220,6 +1220,7 @@
           <button class="dp-gallery-btn dp-pdf-zoom" id="dp-zoom-in" hidden style="font-size:22px;font-weight:400">+</button>
         </div>
       </div>
+      <p class="dp-body-text" id="dp-caption" hidden></p>
       <div class="dp-next">
         <button class="dp-next-circle" id="dp-next-btn">Next</button>
         <button class="dp-next-title" id="dp-next-title"></button>
@@ -1644,6 +1645,7 @@
   const dpNextTitle = document.getElementById('dp-next-title');
   const dpNextBtn   = document.getElementById('dp-next-btn');
   const dpBackBtn   = document.getElementById('dp-back-btn');
+  const dpCaption   = document.getElementById('dp-caption');
   const dpGalFrame  = document.getElementById('dp-gallery-frame');
   const dpGalCounter= document.getElementById('dp-gal-counter');
   const dpGalPrev   = document.getElementById('dp-gal-prev');
@@ -1794,6 +1796,13 @@
     dpDate.textContent    = p.date;
     dpType.textContent    = p.type;
     dpBodyText.textContent = p.desc || '';
+    if (p.caption) {
+      dpCaption.textContent = p.caption;
+      dpCaption.removeAttribute('hidden');
+    } else {
+      dpCaption.textContent = '';
+      dpCaption.setAttribute('hidden', '');
+    }
     dpCatPill.textContent = CAT_LABELS[p.cat];
     const nextId = (id + 1) % PROJECTS.length;
     dpNextTitle.textContent = PROJECTS[nextId].name;
