@@ -19,8 +19,9 @@
       "date": "Jul 2025",
       "type": "Type of work",
       "shortDesc": "Short description for the project list — one or two sentences.",
-      "desc": "A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.",
+      "desc": "ondra is a digital companion piece to the book Energiewende verstehen, developed because climate change and the energy transition are often perceived as too abstract or overwhelming.\n\nUsers move through an abstracted world of distinct climatic zones at their own pace. The design follows the logic of a game without its competitive or reward mechanics — interaction serves orientation and understanding, not performance.",
       "link": "https://my.spline.design/ondraalinaschrder-msa0a6Is4LzZ8mMGQTOR2YYq/",
+      "caption": "Gamification functions here as a knowledge-mediation strategy rather than a motivational device: complex ecological relationships are made experienceable through action, with a focus on how individual choices are embedded in larger climatic processes. Following current shifts in climate communication from guilt toward individual efficacy, the project surfaces small, realistic possibilities for action rather than moral pressure.\n\nEach climatic zone is built as its own experiential space, conveying knowledge about atmosphere, movement, and interaction through a clear colour and zone concept that supports intuitive navigation.\n\nResearch drew on IPCC reports and publications from the German Federal Environment Agency and NASA, condensed into the core relationships and everyday actions suited to playful mediation. A spatial and narrative concept then translated this research into the different climate zones, structured through a storyboard, with visuals, sound, and interaction developed and tested iteratively alongside it."
       "images": ["./media/001_ondra.mp4", "./media/002_ondra.png", "./media/003_ondra.png"]
     },
     {
@@ -29,8 +30,8 @@
       "name": "all the water above me came from below",
       "date": "Jan 2025",
       "type": "Type of work",
-      "shortDesc": "Short description for the project list — one or two sentences.",
-      "desc": "A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.",
+      "shortDesc": "An interactive digital world making the human impact on climate change and the water cycle experienceable, zone by zone.",
+      "desc": "ondra is a digital companion piece to the book Energiewende verstehen, developed because climate change and the energy transition are often perceived as too abstract or overwhelming.\n\nUsers move through an abstracted world of distinct climatic zones at their own pace. The design follows the logic of a game without its competitive or reward mechanics — interaction serves orientation and understanding, not performance.",
       "link": "https://einhornfeealina.github.io/all-the-water-above-me-came-from-below/",
       "images": ["./media/001_all the water.mp4", "./media/002_all the water above me came from.jpg"]
     },
