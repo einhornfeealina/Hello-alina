@@ -88,10 +88,12 @@
       "cat": "foundations",
       "name": "What energy feels like",
       "date": "Mar 2025",
-      "type": "Type of work",
-      "shortDesc": "Short description for the project list — one or two sentences.",
-      "desc": "A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.",
-      "images": []
+      "type": "Artistic study / video",
+      "shortDesc": "A short artistic study making energy visible — an attempt to let viewers actually feel it, not just understand it.",
+      "desc": "What energy feels like is a small exercise in making energy visible through an artistic approach, rather than an explanatory one. The aim is for viewers to sense something of that energy while watching, rather than simply learning about it.",
+      "link": [https://vimeo.com/1214534247?share=copy&fl=sv&fe=ci],
+      "images": ["./media/How energy-3.jpg", "./media/How energy-4.jpg", "./media/How energy-2.jpg"],
+      "images 2": ["./media/How energy-1.jpg", "./media/How energy-5.jpg", "./media/How energy-6.jpg", "./media/How energy-7.jpg"]
     },
     {
       "num": "005",
