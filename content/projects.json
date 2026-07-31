@@ -122,12 +122,12 @@
     {
       "num": "002",
       "cat": "applied",
-      "name": "Honey",
+      "name": "Honey Jars",
       "date": "Nov 2025",
-      "type": "Type of work",
-      "shortDesc": "Short description for the project list — one or two sentences.",
-      "desc": "A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.",
-      "images": []
+      "type": "Label design",
+      "shortDesc": "Labels for honey jars from the rooftop bees at my workplace, designed anew for each occasion.",
+      "desc": "At my workplace, bees live on the roof, producing honey that's regularly given away as gifts — as a welcome gift, a corporate Christmas present, and similar occasions. For each occasion, a new label is designed for the jars.",
+      "images": ["./media/Honey_3.png", "./media/Honey_2.png", "./media/Honey_1.png"]
     },
     {
       "num": "003",
