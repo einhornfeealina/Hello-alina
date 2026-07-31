@@ -74,11 +74,14 @@
       "num": "003",
       "cat": "foundations",
       "name": "How does AI learn?",
-      "date": "Jun 2024",
-      "type": "Type of work",
-      "shortDesc": "Short description for the project list — one or two sentences.",
-      "desc": "A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.",
-      "images": []
+      "date": "Jun 2023",
+      "type": "Animationvideo",
+      "shortDesc": "An animated film explaining how a generative AI learns through a metaphorical story instead of a technical tutorial.",
+      "desc": "Wie lernt eine KI? responds to the limits of typical tutorial formats for complex technical topics, translating the learning process of an AI into a narrative rather than a technical explanation. The generator, discriminator, and oracle are personified as an art forger, an intern, and a boss who knows the original — improving through repeated cycles of attempt, judgement, and correction.",
+      "link": "https://vimeo.com/1214525903?share=copy&fl=sv&fe=ci",
+      "caption": "Team: Hanna Woitich and Alina Schröder",
+      "images": ["./media/wie lernt eine KI_-2.jpg", "./media/wie lernt eine KI_-6.jpg", "./media/wie lernt eine KI_-5.jpg"],
+      "images2": ["./media/wie lernt eine KI_-1.jpg", "./media/wie lernt eine KI_-3.jpg", "./media/wie lernt eine KI_-4.jpg", "./media/wie lernt eine KI_-7.jpg", "./media/wie lernt eine KI_-8.jpg", "./media/wie lernt eine KI_-9.jpg", "./media/wie lernt eine KI_-10.jpg"]
     },
     {
       "num": "004",
@@ -95,10 +98,12 @@
       "cat": "foundations",
       "name": "Overclocked",
       "date": "Nov 2024",
-      "type": "Type of work",
-      "shortDesc": "Short description for the project list — one or two sentences.",
-      "desc": "A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.",
-      "images": []
+      "type": "Photo series",
+      "shortDesc": "A photo series on the structural exhaustion of women, grounded in feminist analysis of invisible care work.",
+      "desc": "Overclocked – Die Erschöpfung der Frau examines the structural overload many women experience through the combined demands of family, career, and social roles. Drawing on feminist analysis — including Franziska Schutzbach's view of exhaustion as a structural consequence of inequality rather than an individual problem — the project treats inequality as something learned rather than innate.",
+      "caption": "Team: Design: Alexa Neufang, Fotografie: Alina Schröder, Fotoassistenz: Jakob Brückner, Hair & Make-up: Julia Titschinski, Stylingassistenz: Julia du Plessis, Models: Isabella Gabriel, Lena Simet, Mercedes Salas, Nele Brenzinger, Selina Göttle, Sheyla Al Tamami",
+      "images": ["./media/Overclocked-26.jpg", "./media/Overclocked-12.jpg", "./media/Overclocked-25.jpg"],
+      "images 2": ["./media/Overclocked-03.jpg", "./media/Overclocked-09.jpg", "./media/Overclocked-13.jpg", "./media/Overclocked-04.jpg", "./media/Overclocked-29.jpg", "./media/Overclocked-15.jpg", "./media/Overclocked-18.jpg", "./media/Overclocked-21.jpg"]
     },
     {
       "num": "001",
