@@ -240,9 +240,9 @@
       background: none;
       color: inherit;
       font-family: inherit;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0em;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
       cursor: pointer;
       flex-shrink: 0;
@@ -393,8 +393,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 14px;
-      font-weight: 700;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
       flex-shrink: 0;
       transition: background 0.15s, color 0.15s;
     }
@@ -908,7 +911,7 @@
       align-items: center;
       justify-content: center;
       width: calc(100vw - 2 * var(--pad) - 2px);
-      height: 200px;
+      height: 340px;
       font-size: 14px;
       font-weight: 400;
       letter-spacing: 0.08em;
@@ -920,7 +923,7 @@
       align-items: center;
       justify-content: center;
       width: calc(100vw - 2 * var(--pad) - 2px);
-      height: 200px;
+      height: 340px;
     }
     .dp-loading::after {
       content: '';
@@ -941,7 +944,7 @@
       width: auto;
       height: auto;
       max-width: 100%;
-      max-height: 70vh;
+      max-height: 85vh;
     }
     .dp-gallery-nav {
       display: flex;
@@ -972,6 +975,36 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
+    /* Secondary image strip */
+    .dp-strip {
+      margin-left: calc(-1 * var(--pad));
+      margin-right: calc(-1 * var(--pad));
+      margin-bottom: clamp(40px, 6vw, 80px);
+    }
+    .dp-strip-track {
+      display: flex;
+      gap: 3px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      height: clamp(140px, 20vw, 240px);
+    }
+    .dp-strip-track::-webkit-scrollbar { display: none; }
+    .dp-strip-track img,
+    .dp-strip-track video {
+      height: 100%;
+      width: auto;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      display: block;
+    }
+    .dp-strip-nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(12px, 2vw, 24px);
+      padding: clamp(12px, 1.5vw, 20px) var(--pad) 0;
+    }
+
     /* Next — circle + title */
     .dp-next {
       border-top: 1px solid currentColor;
@@ -987,9 +1020,9 @@
       border: 1.5px solid currentColor;
       background: none;
       font-family: inherit;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
       color: inherit;
       cursor: none;
@@ -1221,6 +1254,17 @@
         </div>
       </div>
       <p class="dp-body-text" id="dp-caption" hidden></p>
+      <div class="dp-strip" id="dp-strip" hidden>
+        <div class="dp-strip-track" id="dp-strip-track"></div>
+        <div class="dp-strip-nav">
+          <button class="dp-gallery-btn" id="dp-strip-prev">
+            <svg viewBox="0 0 18 18"><line x1="14" y1="9" x2="4" y2="9"/><polyline points="9,4 4,9 9,14"/></svg>
+          </button>
+          <button class="dp-gallery-btn" id="dp-strip-next">
+            <svg viewBox="0 0 18 18"><line x1="4" y1="9" x2="14" y2="9"/><polyline points="9,4 14,9 9,14"/></svg>
+          </button>
+        </div>
+      </div>
       <div class="dp-next">
         <button class="dp-next-circle" id="dp-next-btn">Next</button>
         <button class="dp-next-title" id="dp-next-title"></button>
@@ -1619,18 +1663,22 @@
     .then(data => { PROJECTS = data.projects || []; initProjects(); })
     .catch(() => {
       PROJECTS = [
-        { num: '001', cat: 'core',        name: 'Zwischen uns die Jahre', date: 'Nov 2025', type: 'Interactive application & analog card game', intro: 'Some things are passed down. Others are not.', desc: 'A speculative design project exploring memory and intimacy between generations. Combines a digital archive with a tactile card game to create shared rituals around storytelling. The work questions how design can hold space for emotional complexity across time.', images: [] },
-        { num: '002', cat: 'core',        name: 'Project Title', date: 'Mar 2026', type: 'Type of work', desc: 'A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.', images: [] },
-        { num: '003', cat: 'core',        name: 'Project Title', date: 'Jun 2025', type: 'Type of work', desc: 'A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.', images: [] },
-        { num: '001', cat: 'foundations', name: 'Project Title', date: 'Jan 2026', type: 'Type of work', desc: 'A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.', images: [] },
-        { num: '002', cat: 'foundations', name: 'Project Title', date: 'Sep 2025', type: 'Type of work', desc: 'A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.', images: [] },
-        { num: '003', cat: 'foundations', name: 'Project Title', date: 'Apr 2025', type: 'Type of work', desc: 'A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.', images: [] },
-        { num: '001', cat: 'applied',     name: 'Ondra', date: 'Oct 2025', type: 'Interactive web application', desc: 'A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.', images: [] },
-        { num: '002', cat: 'applied',     name: 'Project Title', date: 'May 2025', type: 'Type of work', desc: 'A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.', images: [] },
-        { num: '003', cat: 'applied',     name: 'Project Title', date: 'Nov 2024', type: 'Type of work', desc: 'A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.', images: [] },
-        { num: '001', cat: 'writing',     name: 'Project Title', date: 'Feb 2026', type: 'Type of work', desc: 'A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.', images: [] },
-        { num: '002', cat: 'writing',     name: 'Project Title', date: 'Aug 2025', type: 'Type of work', desc: 'A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.', images: [] },
-        { num: '003', cat: 'writing',     name: 'Project Title', date: 'Mar 2025', type: 'Type of work', desc: 'A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.', images: [] },
+        { num: '001', cat: 'core',        name: 'The years between us', date: 'Okt 2025 - Feb 2026', type: 'Interactive application & analog card game', shortDesc: 'A bachelor\'s thesis on how war experiences persist across generations — as an interactive app and an analogue card game.', desc: 'Between Us, the Years explores how war experiences continue to shape family relationships, attitudes, and silence across generations, even without being consciously remembered.\n\nThe thesis combines an interactive digital application, built around scroll and non-linear movement instead of linear reading, with an analogue card game. Its central rule — every drawn card must be passed on, though reacting to it stays voluntary — turns passing-on and silence into something players actually enact.', link: 'https://zwischen-uns-die-jahre.vercel.app', caption: 'The thesis draws on psychoanalytic and social-science approaches to the transgenerational transmission of war experiences, treating memory as social and relational rather than individually stored — passed on through attitudes, affects, and relational patterns rather than concrete content.\n\nThe digital application is built from six sections of five chapters each, thirty in total, navigated through scroll and click interaction, conditional logic, and camera movement rather than page-turning — replacing linear reading with a rhythm of movement, pause, and interruption.\n\nEach of the application\'s thirty chapters is mapped to one of the card game\'s thirty cards. The game\'s central rule is that every drawn card must be passed on, while reacting to it is voluntary; points mark where connection occurs rather than rewarding openness or performance, and silence is neither punished nor rewarded.\n\nDevelopment began with research into memory and transgenerational transmission, then continued directly in the digital medium — structure, interaction, and content built in parallel rather than in sequence — while the card game was developed alongside it as an independent, coordinated format.', images: ['./media/001_zwischen uns die jahre.png', './media/002_zwischen uns die jahre.png', './media/003_zwischen uns die jahre.png'] },
+        { num: '002', cat: 'core',        name: 'ONDRA', date: 'Jul 2025', type: 'Type of work', shortDesc: 'An interactive digital world making the human impact on climate change and the water cycle experienceable, zone by zone.', desc: 'ondra is a digital companion piece to the book Energiewende verstehen, developed because climate change and the energy transition are often perceived as too abstract or overwhelming.\n\nUsers move through an abstracted world of distinct climatic zones at their own pace. The design follows the logic of a game without its competitive or reward mechanics — interaction serves orientation and understanding, not performance.', link: 'https://my.spline.design/ondraalinaschrder-msa0a6Is4LzZ8mMGQTOR2YYq/', caption: 'Gamification functions here as a knowledge-mediation strategy rather than a motivational device: complex ecological relationships are made experienceable through action, with a focus on how individual choices are embedded in larger climatic processes. Following current shifts in climate communication from guilt toward individual efficacy, the project surfaces small, realistic possibilities for action rather than moral pressure.\n\nEach climatic zone is built as its own experiential space, conveying knowledge about atmosphere, movement, and interaction through a clear colour and zone concept that supports intuitive navigation.\n\nResearch drew on IPCC reports and publications from the German Federal Environment Agency and NASA, condensed into the core relationships and everyday actions suited to playful mediation. A spatial and narrative concept then translated this research into the different climate zones, structured through a storyboard, with visuals, sound, and interaction developed and tested iteratively alongside it.', images: ['./media/001_ondra.mp4', './media/002_ondra.png', './media/003_ondra.png'] },
+        { num: '003', cat: 'core',        name: 'all the water above me came from below', date: 'Jan 2025', type: 'Type of work', shortDesc: 'A multimedia project using the myth of Ino\'s transformation to question the fashion-photography "male gaze."', desc: 'All the water above me came from below combines photography, experimental film, text, and sound with theoretical research into visual representations of femininity in fashion photography.\n\nIt functions as both a website and an exhibition concept: an open, non-linear space where photographic works, film excerpts, text, and audio sit equally side by side, without a single prescribed reading.', link: 'https://einhornfeealina.github.io/all-the-water-above-me-came-from-below/', caption: 'The project draws on three references: Laura Mulvey\'s concept of the male gaze, describing women shown from a male-dominated, objectifying perspective; Jacques Derrida\'s deconstruction, which treats meaning as unstable and context-dependent rather than fixed; and the mythological figure of Ino, whose leap into the sea stands not for an ending but for a moment of radical uncertainty and transformation.\n\nRather than showing women as static image objects, the work moves the state of transition into focus — the male gaze is irritated through instability and ambivalence rather than illustrated directly, with the myth serving as a thinking model rather than a narrative motif.\n\nWork began with research into feminist film theory and photographic references including Helmut Newton and Horst P. Horst, producing a moodboard of visual states — blur, movement, suspension, dissolution — and a storyboard that organises transitions rather than a linear narrative, deliberately leaving beginning and end open.', images: ['./media/001_all the water.mp4', './media/002_all the water above me came from.jpg'] },
+        { num: '004', cat: 'core',        name: 'BTS', date: 'Jan 2025', type: 'interactive installation', shortDesc: 'An interactive spatial installation visualising how an AI system makes decisions, built with the Fraunhofer Institute.', desc: 'BTS is an interdisciplinary collaboration between Hochschule München and the Fraunhofer Institute for Cognitive Systems (IKS), developing a design-based approach to AI that is experienced spatially rather than explained technically.\n\nThe installation forgoes interfaces and diagrams in favour of spatial dramaturgy: transparent materials, light, projection, and movement make the AI\'s processes traceable without fully disclosing them, balancing control and openness.', caption: 'Visitors move through a spatial sequence structured around input, processing, and output — the three stages of an AI system — using interactive inputs and filters to influence it directly and observe how their changes affect the results. The installation follows a principle of learning by doing: understanding arises through action and observation rather than explanation.\n\nThe project was carried out by a five-person team — Jakob Sikeler, Lorenz Stanislaus, Michelle Walter, Azim Alizada, and Alina Schröder — in cooperation between Hochschule München and the Fraunhofer Institute for Cognitive Systems (IKS).', images: ['./media/001_BTS.mp4', './media/002_BTS.jpg'] },
+        { num: '001', cat: 'foundations', name: 'From Augsburg to Lothstraße', date: 'Jan 2026', type: 'Type of work', shortDesc: 'Short description for the project list — one or two sentences.', desc: 'A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.', images: [] },
+        { num: '002', cat: 'foundations', name: 'Interactive poster', date: 'Jul 2025', type: 'Type of work', shortDesc: 'Short description for the project list — one or two sentences.', desc: 'A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.', images: [] },
+        { num: '003', cat: 'foundations', name: 'How does AI learn?', date: 'Jun 2024', type: 'Type of work', shortDesc: 'Short description for the project list — one or two sentences.', desc: 'A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.', images: [] },
+        { num: '004', cat: 'foundations', name: 'What energy feels like', date: 'Mar 2025', type: 'Type of work', shortDesc: 'Short description for the project list — one or two sentences.', desc: 'A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.', images: [] },
+        { num: '005', cat: 'foundations', name: 'Overclocked', date: 'Nov 2024', type: 'Type of work', shortDesc: 'Short description for the project list — one or two sentences.', desc: 'A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.', images: [] },
+        { num: '001', cat: 'applied',     name: 'Milla Café', date: 'Jul 2025', type: 'Interactive web application', shortDesc: 'Short description for the project list — one or two sentences.', desc: 'A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.', images: [] },
+        { num: '002', cat: 'applied',     name: 'Honey', date: 'Nov 2025', type: 'Type of work', shortDesc: 'Short description for the project list — one or two sentences.', desc: 'A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.', images: [] },
+        { num: '003', cat: 'applied',     name: 'LeitWerk', date: 'Feb 2024 - Jul 2026', type: 'Type of work', shortDesc: 'Short description for the project list — one or two sentences.', desc: 'A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.', images: [] },
+        { num: '001', cat: 'writing',     name: 'Zwischen uns die Jahre', date: 'Feb 2026', type: 'Type of work', shortDesc: 'Short description for the project list — one or two sentences.', desc: 'A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.', pdf: './media/Zwischen uns die Jahre.pdf' },
+        { num: '002', cat: 'writing',     name: 'Ueber Europa und ueber das Erinnern', date: 'Jul 2026', type: 'Type of work', shortDesc: 'Short description for the project list — one or two sentences.', desc: 'A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.', pdf: './media/002_Ueber Europa und ueber das Erinnern.pdf' },
+        { num: '003', cat: 'writing',     name: 'Generationengedanken', date: 'Mar 2025', type: 'Type of work', shortDesc: 'Short description for the project list — one or two sentences.', desc: 'A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.', pdf: './media/Generationengedanken.pdf' },
+        { num: '004', cat: 'writing',     name: 'GAN Project', date: 'Jan 2024', type: 'Type of work', shortDesc: 'Short description for the project list — one or two sentences.', desc: 'A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.', pdf: './media/4. Das GAN - Projekt.pdf' },
       ];
       initProjects();
     });
@@ -1650,6 +1698,35 @@
   const dpGalCounter= document.getElementById('dp-gal-counter');
   const dpGalPrev   = document.getElementById('dp-gal-prev');
   const dpGalNext   = document.getElementById('dp-gal-next');
+  const dpStrip      = document.getElementById('dp-strip');
+  const dpStripTrack = document.getElementById('dp-strip-track');
+  const dpStripPrev  = document.getElementById('dp-strip-prev');
+  const dpStripNext  = document.getElementById('dp-strip-next');
+
+  function renderStrip(images) {
+    dpStripTrack.innerHTML = '';
+    if (!images || !images.length) {
+      dpStrip.setAttribute('hidden', '');
+      return;
+    }
+    dpStrip.removeAttribute('hidden');
+    images.forEach(src => {
+      const el = /\.mp4$/i.test(src) ? document.createElement('video') : document.createElement('img');
+      el.src = src;
+      if (el.tagName === 'VIDEO') { el.autoplay = true; el.loop = true; el.muted = true; el.playsInline = true; }
+      else { el.alt = ''; }
+      dpStripTrack.appendChild(el);
+    });
+  }
+  function stripScrollAmount() {
+    return dpStripTrack.clientWidth * 0.9;
+  }
+  dpStripPrev.addEventListener('click', () => {
+    dpStripTrack.scrollBy({ left: -stripScrollAmount(), behavior: 'smooth' });
+  });
+  dpStripNext.addEventListener('click', () => {
+    dpStripTrack.scrollBy({ left: stripScrollAmount(), behavior: 'smooth' });
+  });
 
   let galIdx = 0;
   let galImages = [];
@@ -1803,6 +1880,7 @@
       dpCaption.textContent = '';
       dpCaption.setAttribute('hidden', '');
     }
+    renderStrip(p.images2);
     dpCatPill.textContent = CAT_LABELS[p.cat];
     const nextId = (id + 1) % PROJECTS.length;
     dpNextTitle.textContent = PROJECTS[nextId].name;
