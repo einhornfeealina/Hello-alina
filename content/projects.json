@@ -10,7 +10,7 @@
       "desc": "Between Us, the Years explores how war experiences continue to shape family relationships, attitudes, and silence across generations, even without being consciously remembered.\n\nThe thesis combines an interactive digital application, built around scroll and non-linear movement instead of linear reading, with an analogue card game. Its central rule — every drawn card must be passed on, though reacting to it stays voluntary — turns passing-on and silence into something players actually enact.",
       "link": "https://zwischen-uns-die-jahre.vercel.app",
       "caption": "The thesis draws on psychoanalytic and social-science approaches to the transgenerational transmission of war experiences, treating memory as social and relational rather than individually stored — passed on through attitudes, affects, and relational patterns rather than concrete content.\n\nThe digital application is built from six sections of five chapters each, thirty in total, navigated through scroll and click interaction, conditional logic, and camera movement rather than page-turning — replacing linear reading with a rhythm of movement, pause, and interruption.\n\nEach of the application's thirty chapters is mapped to one of the card game's thirty cards. The game's central rule is that every drawn card must be passed on, while reacting to it is voluntary; points mark where connection occurs rather than rewarding openness or performance, and silence is neither punished nor rewarded.\n\nDevelopment began with research into memory and transgenerational transmission, then continued directly in the digital medium — structure, interaction, and content built in parallel rather than in sequence — while the card game was developed alongside it as an independent, coordinated format.",
-      "images": ["./media/001_zwischen uns die jahre.png", "./media/003_zwischen uns die jahre.png", "./media/002_zwischen uns die jahre.png"],
+      "images": ["./media/001_zwischen uns die jahre.png", "./media/003_zwischen uns die jahre.png", "./media/004_zwischen uns die jahre.png", "./media/002_zwischen uns die jahre.png", "./media/005_zwischen uns die jahre.png", "./media/007_zwischen uns die jahre.png", "./media/008_zwischen uns die jahre.png", "./media/009_zwischen uns die jahre.png"],
       "images2": ["./media/ZudJ-2", "./media/ZudJ-6", "./media/ZudJ-1", "./media/ZudJ-5", "./media/ZudJ-4", "./media/ZudJ-3"]
     },
     {
@@ -68,7 +68,7 @@
       "shortDesc": "An interactive poster controlled with a keyboard — pressing different keys triggers something on the poster.",
       "desc": "The poster responds to keyboard input: different keys trigger different reactions on the poster. There's no set instruction for what to press — the piece works through trying keys out and seeing what happens.",
       "link": "https://einhornfeealina.github.io/animationsbasics_1_alinaschroeder/",
-      "images": ["./media/Plakat-4.jpg", "./media/Plakat-5.jpg"]
+      "images": ["./media/Plakat-5.jpg", "./media/Plakat-4.jpg"]
     },
     {
       "num": "003",
