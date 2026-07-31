@@ -10,14 +10,15 @@
       "desc": "Between Us, the Years explores how war experiences continue to shape family relationships, attitudes, and silence across generations, even without being consciously remembered.\n\nThe thesis combines an interactive digital application, built around scroll and non-linear movement instead of linear reading, with an analogue card game. Its central rule — every drawn card must be passed on, though reacting to it stays voluntary — turns passing-on and silence into something players actually enact.",
       "link": "https://zwischen-uns-die-jahre.vercel.app",
       "caption": "The thesis draws on psychoanalytic and social-science approaches to the transgenerational transmission of war experiences, treating memory as social and relational rather than individually stored — passed on through attitudes, affects, and relational patterns rather than concrete content.\n\nThe digital application is built from six sections of five chapters each, thirty in total, navigated through scroll and click interaction, conditional logic, and camera movement rather than page-turning — replacing linear reading with a rhythm of movement, pause, and interruption.\n\nEach of the application's thirty chapters is mapped to one of the card game's thirty cards. The game's central rule is that every drawn card must be passed on, while reacting to it is voluntary; points mark where connection occurs rather than rewarding openness or performance, and silence is neither punished nor rewarded.\n\nDevelopment began with research into memory and transgenerational transmission, then continued directly in the digital medium — structure, interaction, and content built in parallel rather than in sequence — while the card game was developed alongside it as an independent, coordinated format.",
-      "images": ["./media/001_zwischen uns die jahre.png", "./media/002_zwischen uns die jahre.png", "./media/003_zwischen uns die jahre.png"]
+      "images": ["./media/001_zwischen uns die jahre.png", "./media/002_zwischen uns die jahre.png", "./media/003_zwischen uns die jahre.png"],
+      "images2": []
     },
     {
       "num": "002",
       "cat": "core",
       "name": "ONDRA",
       "date": "Jul 2025",
-      "type": "Type of work",
+      "type": "Interactive application",
       "shortDesc": "An interactive digital world making the human impact on climate change and the water cycle experienceable, zone by zone.",
       "desc": "ondra is a digital companion piece to the book Energiewende verstehen, developed because climate change and the energy transition are often perceived as too abstract or overwhelming.\n\nUsers move through an abstracted world of distinct climatic zones at their own pace. The design follows the logic of a game without its competitive or reward mechanics — interaction serves orientation and understanding, not performance.",
       "link": "https://my.spline.design/ondraalinaschrder-msa0a6Is4LzZ8mMGQTOR2YYq/",
@@ -29,7 +30,7 @@
       "cat": "core",
       "name": "all the water above me came from below",
       "date": "Jan 2025",
-      "type": "Type of work",
+      "type": "Multimedia project",
       "shortDesc": "A multimedia project using the myth of Ino's transformation to question the fashion-photography \"male gaze.\"",
       "desc": "All the water above me came from below combines photography, experimental film, text, and sound with theoretical research into visual representations of femininity in fashion photography.\n\nIt functions as both a website and an exhibition concept: an open, non-linear space where photographic works, film excerpts, text, and audio sit equally side by side, without a single prescribed reading.",
       "link": "https://einhornfeealina.github.io/all-the-water-above-me-came-from-below/",
@@ -41,7 +42,7 @@
       "cat": "core",
       "name": "BTS",
       "date": "Jan 2025",
-      "type": "interactive installation",
+      "type": "Interactive installation",
       "shortDesc": "An interactive spatial installation visualising how an AI system makes decisions, built with the Fraunhofer Institute.",
       "desc": "BTS is an interdisciplinary collaboration between Hochschule München and the Fraunhofer Institute for Cognitive Systems (IKS), developing a design-based approach to AI that is experienced spatially rather than explained technically.\n\nThe installation forgoes interfaces and diagrams in favour of spatial dramaturgy: transparent materials, light, projection, and movement make the AI's processes traceable without fully disclosing them, balancing control and openness.",
       "caption": "Visitors move through a spatial sequence structured around input, processing, and output — the three stages of an AI system — using interactive inputs and filters to influence it directly and observe how their changes affect the results. The installation follows a principle of learning by doing: understanding arises through action and observation rather than explanation.\n\nThe project was carried out by a five-person team — Jakob Sikeler, Lorenz Stanislaus, Michelle Walter, Azim Alizada, and Alina Schröder — in cooperation between Hochschule München and the Fraunhofer Institute for Cognitive Systems (IKS).",
@@ -51,21 +52,23 @@
       "num": "001",
       "cat": "foundations",
       "name": "From Augsburg to Lothstraße",
-      "date": "Jan 2026",
-      "type": "Type of work",
-      "shortDesc": "Short description for the project list — one or two sentences.",
-      "desc": "A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.",
-      "images": []
+      "date": "Jul 2026",
+      "type": "Participant observation / web collection",
+      "shortDesc": "A collection of observations made during train rides between Augsburg and Lothstraße, gathered on a website.",
+      "desc": "The project is based on participant observation: things noticed during the recurring train commute — often while bored — were written down as they occurred and later collected on this website.",
+      "link": "https://vonaugsburgzurlothstraße.framer.website",
+      "images": ["./media/Augsburg-Lothstraße-2.jpg", "./media/Augsburg-Lothstraße-3.jpg", "./media/Augsburg-Lothstraße-1.jpg"]
     },
     {
       "num": "002",
       "cat": "foundations",
       "name": "Interactive poster",
       "date": "Jul 2025",
-      "type": "Type of work",
-      "shortDesc": "Short description for the project list — one or two sentences.",
-      "desc": "A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.",
-      "images": []
+      "type": "Interactive Poster",
+      "shortDesc": "An interactive poster controlled with a keyboard — pressing different keys triggers something on the poster.",
+      "desc": "The poster responds to keyboard input: different keys trigger different reactions on the poster. There's no set instruction for what to press — the piece works through trying keys out and seeing what happens.",
+      "link": "https://einhornfeealina.github.io/animationsbasics_1_alinaschroeder/",
+      "images": ["./media/Plakat-4.jpg", "./media/Plakat-5.jpg"]
     },
     {
       "num": "003",
