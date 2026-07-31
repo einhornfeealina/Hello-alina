@@ -112,11 +112,12 @@
       "num": "001",
       "cat": "applied",
       "name": "Milla Café",
-      "date": "Jul 2025",
-      "type": "Interactive web application",
-      "shortDesc": "Short description for the project list — one or two sentences.",
-      "desc": "A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.",
-      "images": []
+      "date": "Jun 2025 - Sep 2025",
+      "type": "Interior concept & corporate design",
+      "shortDesc": "An interior concept and corporate design for Mila, a café opened through interim use.",
+      "desc": "Milla is a café opened through interim use (Zwischennutzung), for which the team developed both the interior concept and the corporate design — logo, typography, and related elements. The logo was derived from the windows of the building itself. The project was carried out by Hanna Emunds, Greta Geisler, and Alina Schröder, supervised by Prof. Rether, and the café opened on 14 September 2025.",
+      "images": ["./media/milla-3.jpg", "./media/milla-1-2.jpg", "./media/milla-4.jpg", "./media/milla-9.jpg", "./media/milla-8.jpg"],
+      "images2": ["./media/milla-17.jpg", "./media/milla-1.jpg", "./media/milla-6.jpg", "./media/milla-7.jpg", "./media/milla-2-2.jpg", "./media/milla-2.jpg", "./media/milla-11.jpg", "./media/milla-15.jpg", "./media/milla-10.jpg", "./media/milla-5.jpg", "./media/milla-16.jpg"]
     },
     {
       "num": "002",
