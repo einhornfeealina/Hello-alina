@@ -132,12 +132,12 @@
     {
       "num": "003",
       "cat": "applied",
-      "name": "LeitWerk",
+      "name": "LeitWerk Family",
       "date": "Feb 2024 - Jul 2026",
-      "type": "Type of work",
-      "shortDesc": "Short description for the project list — one or two sentences.",
-      "desc": "A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.",
-      "images": []
+      "type": "Graphic design / working student position",
+      "shortDesc": "Graphic and print work for LeitWerk Family, a construction management company, created during a working-student position.",
+      "desc": "As a working student at LeitWerk Family, a construction management company, Alina produces a wide range of graphic and print materials — including flyers, brochures, site signage, business cards, and presentations.",
+      "images": ["./media/LW_Flyer.jpg", "./media/LW Sticker 1.jpg", "./media/TW_Flyer.jpg", "./media/LW Rollup 1.jpg", "./media/LW Flyer 2.jpg", "./media/LW Rollup 2.jpg"]
     },
     {
       "num": "001",
