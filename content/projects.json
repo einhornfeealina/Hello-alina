@@ -91,9 +91,9 @@
       "type": "Artistic study / video",
       "shortDesc": "A short artistic study making energy visible — an attempt to let viewers actually feel it, not just understand it.",
       "desc": "What energy feels like is a small exercise in making energy visible through an artistic approach, rather than an explanatory one. The aim is for viewers to sense something of that energy while watching, rather than simply learning about it.",
-      "link": [https://vimeo.com/1214534247?share=copy&fl=sv&fe=ci],
+      "link": ["https://vimeo.com/1214534247?share=copy&fl=sv&fe=ci"],
       "images": ["./media/How energy-3.jpg", "./media/How energy-4.jpg", "./media/How energy-2.jpg"],
-      "images 2": ["./media/How energy-1.jpg", "./media/How energy-5.jpg", "./media/How energy-6.jpg", "./media/How energy-7.jpg"]
+      "images2": ["./media/How energy-1.jpg", "./media/How energy-5.jpg", "./media/How energy-6.jpg", "./media/How energy-7.jpg"]
     },
     {
       "num": "005",
@@ -105,7 +105,7 @@
       "desc": "Overclocked – Die Erschöpfung der Frau examines the structural overload many women experience through the combined demands of family, career, and social roles. Drawing on feminist analysis — including Franziska Schutzbach's view of exhaustion as a structural consequence of inequality rather than an individual problem — the project treats inequality as something learned rather than innate.",
       "caption": "Team: Design: Alexa Neufang, Fotografie: Alina Schröder, Fotoassistenz: Jakob Brückner, Hair & Make-up: Julia Titschinski, Stylingassistenz: Julia du Plessis, Models: Isabella Gabriel, Lena Simet, Mercedes Salas, Nele Brenzinger, Selina Göttle, Sheyla Al Tamami",
       "images": ["./media/Overclocked-26.jpg", "./media/Overclocked-12.jpg", "./media/Overclocked-25.jpg"],
-      "images 2": ["./media/Overclocked-03.jpg", "./media/Overclocked-09.jpg", "./media/Overclocked-13.jpg", "./media/Overclocked-04.jpg", "./media/Overclocked-29.jpg", "./media/Overclocked-15.jpg", "./media/Overclocked-18.jpg", "./media/Overclocked-21.jpg"]
+      "images2": ["./media/Overclocked-03.jpg", "./media/Overclocked-09.jpg", "./media/Overclocked-13.jpg", "./media/Overclocked-04.jpg", "./media/Overclocked-29.jpg", "./media/Overclocked-15.jpg", "./media/Overclocked-18.jpg", "./media/Overclocked-21.jpg"]
     },
     {
       "num": "001",
