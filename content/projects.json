@@ -142,31 +142,31 @@
     {
       "num": "001",
       "cat": "writing",
-      "name": "Zwischen uns die Jahre",
+      "name": "The Years Between Us",
       "date": "Feb 2026",
-      "type": "Type of work",
-      "shortDesc": "Short description for the project list — one or two sentences.",
-      "desc": "A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.",
+      "type": "Bachelor thesis",
+      "shortDesc": "The full written bachelor's thesis on how war experiences remain effective across generations without being directly lived or consciously remembered.",
+      "desc": "The thesis develops a theoretical framework around war experiences, memory, and generation, examining the psychological, familial/communicative/ritual, bodily/neurobiological/epigenetic, and societal processes through which the effects of war are transmitted across generations. Rather than focusing on individual wars, it asks how their consequences persist in attitudes, silences, and family tensions long after the events themselves have ended.",
       "pdf": "./media/Zwischen uns die Jahre.pdf"
     },
     {
       "num": "002",
       "cat": "writing",
-      "name": "Ueber Europa und ueber das Erinnern",
+      "name": "On Europe and On Remembering",
       "date": "Jul 2026",
-      "type": "Type of work",
-      "shortDesc": "Short description for the project list — one or two sentences.",
-      "desc": "A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.",
+      "type": "Essay",
+      "shortDesc": "An essay on how European collective memory is constructed — true in its details, yet selective in what it leaves out.",
+      "desc": "On Europe and On Remembering examines how Europe's story about itself — from Athens through Rome to 1945 — is built through institutions like schools and museums that repeat certain narratives until they feel like fact. Drawing on Aleida Assmann's idea that memory is a construction rather than a store, and Dag Nikolaus Hasse's research into the Arabic and Islamic scholarship underlying Europe's classical inheritance, the essay asks what Europe has had to forget in order to remain Europe.",
       "pdf": "./media/002_Ueber Europa und ueber das Erinnern.pdf"
     },
     {
       "num": "003",
       "cat": "writing",
-      "name": "Generationengedanken",
+      "name": "Generation Thoughts",
       "date": "Mar 2025",
-      "type": "Type of work",
-      "shortDesc": "Short description for the project list — one or two sentences.",
-      "desc": "A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.",
+      "type": "Personal reflection",
+      "shortDesc": "A short personal reflection on Generation Z — its contradictions, self-observation, and desire to be seen.",
+      "desc": "Generation Thoughts is a short reflective text on what defines Generation Z: not a single shared voice but a divided one, shaped by individual bubbles, constant comparison, and a habit of self-analysis. It argues that despite outward confidence, the underlying wish is simply to be seen as a person, not as a performance.",
       "pdf": "./media/Generationengedanken.pdf"
     },
     {
@@ -174,9 +174,9 @@
       "cat": "writing",
       "name": "GAN Project",
       "date": "Jan 2024",
-      "type": "Type of work",
-      "shortDesc": "Short description for the project list — one or two sentences.",
-      "desc": "A fuller account of the project context, process, and outcome. Two to four sentences giving the reader a real sense of the work and what drove the decisions behind it.",
+      "type": "Documentation",
+      "shortDesc": "A two-part technical documentation of building and personalising a Generative Adversarial Network, exploring the idea of creating an AI with an AI.",
+      "desc": "The GAN Project documents work with Generative Adversarial Networks in two stages: first implementing a GAN on the MNIST dataset to learn the fundamentals of generator and discriminator training, then extending the model to a custom dataset and personalising it while exploring the integration of ChatGPT into the process. The conclusion reflects candidly on where ChatGPT helped — and where, as the code grew more complex, its usefulness reached its limits.",
       "pdf": "./media/4. Das GAN - Projekt.pdf"
     }
   ]
